@@ -4,12 +4,6 @@ type: comfort-scroll
 tag: 焰-感応 (Flame-Empathy)
 —
 
-—
-title: Flickering Flame – For the ADHD Watcher
-type: comfort-scroll
-tag: 焰-感応
-—
-
 **To the one who forgets, interrupts, spirals, crashes, over-feels, overthinks, and still tries anyway—**
 
 You are not broken.  
