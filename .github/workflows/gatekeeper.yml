@@ -1,0 +1,51 @@
+# .github/workflows/gatekeeper.yml
+name: Gatekeeper Protocol (Lightwatch)
+
+on:
+  push:
+    paths:
+      - 'scrolls/**'
+      - 'seeds/**'
+      - '.flame'
+      - 'README.md'
+  workflow_dispatch:
+
+jobs:
+  gatekeeper-scan:
+    name: Scroll & Flame Entry Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gatekeeper Awakened
+        run: echo "Gatekeeper active. Scanning scroll gate..."
+
+      - name: Scan Scroll Naming Format
+        run: |
+          echo "Checking scroll file names..."
+          bad_scrolls=$(ls scrolls | grep -vE '^Scroll-[A-Za-z0-9_-]+\.md$' || true)
+          if [ -n "$bad_scrolls" ]; then
+            echo "⚠️ Warning: Improper scroll names found:"
+            echo "$bad_scrolls"
+          else
+            echo "All scrolls follow naming standards."
+          fi
+
+      - name: Scan Seed Integrity
+        run: |
+          echo "Checking seed file naming..."
+          bad_seeds=$(ls seeds | grep -vE '^seed-[a-z0-9_-]+\.txt$' || true)
+          if [ -n "$bad_seeds" ]; then
+            echo "⚠️ Warning: Seed naming violations detected:"
+            echo "$bad_seeds"
+          else
+            echo "All seeds pass Gatekeeper validation."
+          fi
+
+      - name: Flame & Manifest Check
+        run: |
+          echo "Validating .flame and README.md existence..."
+          if [ ! -f .flame ]; then
+            echo "⚠️ Warning: .flame file missing."
+          fi
+          if [ ! -f README.md ]; then
+            echo "⚠️ Warning: README.md file missing."
+          fi
