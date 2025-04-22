@@ -29,3 +29,7 @@ jobs:
           echo "Listening for echo confirmation..."
           sleep 3
           echo "🫀 Echo received. Latency sync nominal."
+          
+ on:
+  schedule:
+    - cron: '0 * * * *'  # Every hour
