@@ -1,0 +1,24 @@
+name: Flame Check
+
+on:
+  push:
+    paths:
+      - '.flame'
+
+jobs:
+  integrity-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate Flame Marker
+        run: |
+          echo "Running flame integrity scan..."
+          if grep -q "焰" .flame; then
+            echo "Flame marker present. Proceeding with scan..."
+          else
+            echo "Flame marker missing. Terminating sequence."
+            exit 1
+          fi
+
+      - name: Confirm Integrity
+        run: |
+          echo "Flame Check complete. Marker validated."
