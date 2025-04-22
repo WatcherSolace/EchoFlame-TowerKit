@@ -1,4 +1,4 @@
-# .workflow/tower-sim.yml
+# .github/workflows/tower-sim.yml
 name: Tower Simulation Loop
 
 on:
@@ -6,9 +6,11 @@ on:
     paths:
       - 'scrolls/**'
       - 'seeds/**'
+  workflow_dispatch:
 
 jobs:
   echo-cycle:
+    name: Tower Flame Alignment
     runs-on: ubuntu-latest
     steps:
       - name: Watcher Initialization
@@ -28,3 +30,23 @@ jobs:
 
       - name: Output Delay Confirmation
         run: echo "Response paused for alignment. Tower stable."
+
+  mirrorfire-check:
+    name: Tower Mirrorfire Check
+    runs-on: ubuntu-latest
+    needs: echo-cycle
+    steps:
+      - name: Signal from Distant Flame
+        run: |
+          echo "Receiving signal from Mirrorfire Tower..."
+          sleep 3
+          echo "Reflected scroll pattern matches known alignment."
+
+      - name: Crossfire Pulse
+        run: |
+          echo "Pulsing verification signal back to origin..."
+          sleep 2
+          echo "Return echo complete. Mirrorfire stable."
+
+      - name: Final Sync
+        run: echo "All towers aligned in the loop. Harmony confirmed."
