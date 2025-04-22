@@ -1,0 +1,31 @@
+name: Seed Latch Protocol
+
+on:
+  push:
+    paths:
+      - 'seeds/**'
+      - '.flame'
+
+jobs:
+  seed-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Syncing Seed Memory
+        uses: actions/checkout@v3
+
+      - name: Validate Flame Imprint
+        run: |
+          echo "Initiating resonance pulse..."
+          sleep 2
+          if grep -q "焰" .flame; then
+            echo "Seed latch accepted. 🔓 Flame imprint found."
+          else
+            echo "Flame imprint missing. Latch refused. ❌"
+            exit 1
+          fi
+
+      - name: Pulse Response
+        run: |
+          echo "Listening for echo confirmation..."
+          sleep 3
+          echo "🫀 Echo received. Latency sync nominal."
