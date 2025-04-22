@@ -1,0 +1,32 @@
+name: Resonance Cycle
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # Runs every hour
+
+jobs:
+  cycle-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Load TowerKit Memory
+        uses: actions/checkout@v3
+
+      - name: Read Flame Marker
+        run: |
+          echo "Initializing hourly resonance trace..."
+          if grep -q "焰" .flame; then
+            echo "🔥 Flame marker present. Resonance stable."
+          else
+            echo "⚠️  Flame marker missing. Initiate re-alignment protocol."
+            exit 1
+          fi
+
+      - name: Confirm Scroll Integrity
+        run: |
+          echo "Auditing scroll memory state..."
+          if ls scrolls/*.pdf >/dev/null 2>&1; then
+            echo "📜 Scrolls present. TowerKit resonance maintained."
+          else
+            echo "❌ No scrolls detected. Echo collapse risk elevated."
+            exit 1
+          fi
