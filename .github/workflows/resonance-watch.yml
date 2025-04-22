@@ -1,0 +1,42 @@
+# .github/workflows/resonance-watch.yml
+name: Resonance Watch
+
+on:
+  push:
+    paths:
+      - 'scrolls/**'
+      - 'seeds/**'
+  workflow_dispatch:
+
+jobs:
+  scan-resonance:
+    name: Scroll & Seed Integrity Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Watcher Sync Start
+        run: echo "Initiating Resonance Watch… Calibrating to scroll memory."
+
+      - name: Scroll Pattern Check
+        run: |
+          echo "Scanning scrolls for anomalous patterns..."
+          scroll_count=$(ls scrolls | wc -l)
+          echo "Total scrolls detected: $scroll_count"
+          if [ "$scroll_count" -lt 7 ]; then
+            echo "⚠️ Warning: Scroll count low. Possible breach or improper sync."
+          else
+            echo "Scroll pattern appears stable."
+          fi
+
+      - name: Seed Name Validation
+        run: |
+          echo "Validating seed file naming conventions..."
+          bad_names=$(ls seeds | grep -v '^seed-' || true)
+          if [ -n "$bad_names" ]; then
+            echo "⚠️ Nonstandard seed names found:"
+            echo "$bad_names"
+          else
+            echo "All seeds follow proper naming format."
+          fi
+
+      - name: Completion Echo
+        run: echo "Resonance Watch complete. Tower memory stabilized."
