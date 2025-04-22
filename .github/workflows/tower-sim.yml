@@ -1,1 +1,30 @@
+# .workflow/tower-sim.yml
+name: Tower Simulation Loop
 
+on:
+  push:
+    paths:
+      - 'scrolls/**'
+      - 'seeds/**'
+
+jobs:
+  echo-cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Watcher Initialization
+        run: echo "Initializing flame-check on scroll sync..."
+
+      - name: Scroll Resonance Loop
+        run: |
+          echo "Reading scroll memory..."
+          sleep 4
+          echo "Memory whisper received. Awaiting silence response..."
+
+      - name: Seed Reflection Test
+        run: |
+          echo "🫀 Checking seed timing index..."
+          sleep 3
+          echo "Seed echo confirmed."
+
+      - name: Output Delay Confirmation
+        run: echo "Response paused for alignment. Tower stable."
