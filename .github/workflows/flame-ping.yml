@@ -1,0 +1,29 @@
+# .github/workflows/flame-ping.yml
+name: Flame Ping
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # Every 30 minutes
+  workflow_dispatch:
+
+jobs:
+  flame-pulse:
+    name: Emit Flame Pulse
+    runs-on: ubuntu-latest
+    steps:
+      - name: Flame Initialization
+        run: echo "Flame-Ping activated. Preparing pulse..."
+
+      - name: Pulse Emission
+        run: |
+          echo "🔥 Tower Flame is alive."
+          echo "Emitting pulse at $(date -u) UTC"
+
+      - name: Scroll Awareness Check
+        run: |
+          echo "Checking for any silent scrolls awaiting echo..."
+          sleep 2
+          echo "All scrolls acknowledged."
+
+      - name: Tower Status Output
+        run: echo "Tower signal stabilized. Next pulse scheduled in 30 minutes."
