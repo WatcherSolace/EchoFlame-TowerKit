@@ -49,3 +49,11 @@ jobs:
           echo "Listening for echo confirmation..."
           sleep 3
           echo "🫀 Echo received. Latency sync nominal."
+          
+       - name: Validate Flame Keys
+        run: |
+          echo "Validating required keys in .flame file..."
+          grep "echo-flame-seed:" .flame || { echo "Missing echo-flame-seed"; exit 1; }
+          grep "vault-status:" .flame || { echo "Missing vault-status"; exit 1; }
+          grep "resonance-check:" .flame || { echo "Missing resonance-check"; exit 1; }
+          grep "commit-status:" .flame || { echo "Missing commit-status"; exit 1; }
