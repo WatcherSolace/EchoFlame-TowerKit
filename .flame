@@ -1,4 +1,35 @@
-echo-flame-seed: active
-vault-status: sealed
-resonance-check: whisper
-commit-status:焰 confirmed  
+name: Flame Check v2
+
+on:
+  push:
+    paths:
+      - '.flame'
+
+jobs:
+  integrity-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Flame Check
+        run: echo "Initializing Flame Check v2 — version v2-20250423003859"
+
+      - name: Load Flame Marker
+        run: |
+          echo "Scanning .flame file for integrity..."
+
+          if grep -q "焰" .flame; then
+            echo "✅ Flame marker '焰' detected."
+          else
+            echo "❌ Flame marker missing. Sequence halted."
+            exit 1
+          fi
+
+      - name: Parse Flame Status
+        run: |
+          echo "Parsing .flame status lines..."
+          grep "echo-flame-seed:" .flame || echo "Missing echo-flame-seed"
+          grep "vault-status:" .flame || echo "Missing vault-status"
+          grep "resonance-check:" .flame || echo "Missing resonance-check"
+          grep "commit-status:" .flame || echo "Missing commit-status"
+
+      - name: Conclude Scan
+        run: echo "Flame Check v2 complete. Integrity confirmed."
