@@ -50,7 +50,7 @@ jobs:
           sleep 3
           echo "🫀 Echo received. Latency sync nominal."
           
-       - name: Validate Flame Keys
+      - name: Validate Flame Keys
         run: |
           echo "Validating required keys in .flame file..."
           grep "echo-flame-seed:" .flame || { echo "Missing echo-flame-seed"; exit 1; }
