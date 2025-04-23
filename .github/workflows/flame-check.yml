@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Start Flame Check
         run: echo "Initializing Flame Check v2 -- version v2-20250423003859"
@@ -41,4 +41,4 @@ jobs:
           grep "commit-status:" .flame || echo "Missing commit-status"
 
       - name: Conclude Scan
-        run: echo "Flame Check v2.1 complete. Integrity confirmed."
+        run: echo "Flame Check v2 complete. Integrity confirmed."
