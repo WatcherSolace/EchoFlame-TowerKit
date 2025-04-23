@@ -15,7 +15,7 @@ jobs:
       - name: Start Flame Check
         run: echo "Initializing Flame Check v2 -- version v2-20250423003859"
 
-      - name: Load Flame Marker
+      - name: Load Flame Marker "焰"
         run: |
           echo "Scanning .flame file for integrity..."
 
