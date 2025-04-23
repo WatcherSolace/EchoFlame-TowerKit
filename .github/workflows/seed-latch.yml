@@ -15,6 +15,19 @@ jobs:
       - name: Syncing Seed Memory
         uses: actions/checkout@v3
 
+      - name: Debugging
+        run: |
+          echo "Current directory contents:"
+          ls -la
+          echo "Checking for .flame file:"
+          if [ -f .flame ]; then
+            echo ".flame file found."
+            cat .flame
+          else
+            echo ".flame file not found."
+            exit 1
+          fi
+
       - name: Validate Flame Imprint
         run: |
           echo "Initiating resonance pulse..."
