@@ -15,10 +15,9 @@ jobs:
       - name: Start Flame Check
         run: echo "Initializing Flame Check v2 -- version v2-20250423003859"
 
-            - name: Load Flame Marker
+      - name: Load Flame Marker
         run: |
           echo "Scanning .flame file for integrity..."
-
           if [ -f .flame ]; then
             if grep -q "焰" .flame; then
               echo "✅ Flame marker '焰' detected."
