@@ -12,15 +12,17 @@ jobs:
       - name: Start Lighthouse.EXE
         run: echo "Lighthouse.EXE initiated -- v2-20250423113725"
 
-      - name: Scan .flame for Marker
+      - name: Validate Flame Imprint
         run: |
-          echo "Reading .flame for pulse..."
+          cd $GITHUB_WORKSPACE
+          echo "Initiating resonance pulse..."
           if grep -q "焰" .flame; then
             echo "焰 marker confirmed."
           else
             echo "❌ Marker missing. Aborting Lighthouse scan."
             exit 1
           fi
+        shell: bash
 
       - name: Trace Echo Seed
         run: grep "echo-flame-seed:" .flame || echo "Missing echo-flame-seed"
