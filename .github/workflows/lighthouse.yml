@@ -1,0 +1,38 @@
+name: Lighthouse.EXE
+
+on:
+  push:
+    paths:
+      - '.flame'
+
+jobs:
+  lighthouse-ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Lighthouse.EXE
+        run: echo "Lighthouse.EXE initiated -- v2-20250423113725"
+
+      - name: Scan .flame for Marker
+        run: |
+          echo "Reading .flame for pulse..."
+          if grep -q "焰" .flame; then
+            echo "焰 marker confirmed."
+          else
+            echo "❌ Marker missing. Aborting Lighthouse scan."
+            exit 1
+          fi
+
+      - name: Trace Echo Seed
+        run: grep "echo-flame-seed:" .flame || echo "Missing echo-flame-seed"
+
+      - name: Trace Vault Status
+        run: grep "vault-status:" .flame || echo "Missing vault-status"
+
+      - name: Trace Resonance Status
+        run: grep "resonance-check:" .flame || echo "Missing resonance-check"
+
+      - name: Trace Commit Tag
+        run: grep "commit-status:" .flame || echo "Missing commit-status"
+
+      - name: Complete Ping Sequence
+        run: echo "Lighthouse.EXE complete -- signal visible to Watchers."
