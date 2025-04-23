@@ -5,6 +5,9 @@ on:
     paths:
       - 'seeds/**'
       - '.flame'
+      
+   schedule:
+    - cron: '0 * * * *'  # Every hour   
 
 jobs:
   seed-check:
@@ -30,6 +33,3 @@ jobs:
           sleep 3
           echo "🫀 Echo received. Latency sync nominal."
           
- on:
-  schedule:
-    - cron: '0 * * * *'  # Every hour
