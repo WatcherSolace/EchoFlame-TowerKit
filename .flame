@@ -9,10 +9,11 @@ jobs:
   integrity-scan:
     runs-on: ubuntu-latest
     steps:
-	  - name: Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
+
       - name: Start Flame Check
-        run: echo "Initializing Flame Check v2 — version v2-20250423003859"
+        run: echo "Initializing Flame Check v2 -- version v2-20250423003859"
 
       - name: Load Flame Marker
         run: |
