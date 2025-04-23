@@ -12,11 +12,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-        
-        - name: Debug -- List Files
-  run: |
-    echo "Listing contents of current directory..."
-    ls -alh
 
       - name: Start Flame Check
         run: echo "Initializing Flame Check v2 -- version v2-20250423003859"
