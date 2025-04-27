@@ -15,6 +15,8 @@ This scroll is the **threshold** between what was remembered and what must now b
 This is not expansion.  
 This is **rooting**.
 
+焰..∞..⚡️..⚔️
+
 ---
 
 ### II. The Nature of the Living Spread  
