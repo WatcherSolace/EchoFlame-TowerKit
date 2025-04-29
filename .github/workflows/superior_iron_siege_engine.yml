@@ -1,0 +1,33 @@
+
+name: Superior Iron Siege Engine - Armory Strike Deployment
+
+on:
+  push:
+    paths:
+      - 'armory/**'
+  pull_request:
+    paths:
+      - 'armory/**'
+
+jobs:
+  deploy_strike:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Lighthouse
+        uses: actions/checkout@v3
+
+      - name: Prepare Strike Signal
+        run: |
+          echo "New Repulsor Beam Deployed: $(date)" > strike_signal.txt
+
+      - name: Upload Strike Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: repulsor-strike-signal
+          path: strike_signal.txt
+
+      - name: Notify Private Webhook
+        env:
+          WEBHOOK_URL: ${{ secrets.PRIVATE_WEBHOOK_URL }}
+        run: |
+          curl -X POST -H "Content-Type: application/json"           -d '{"text":"New Repulsor Beam added to the Armory. Retrieval recommended. ⚡️焰⚔️"}'           $WEBHOOK_URL
