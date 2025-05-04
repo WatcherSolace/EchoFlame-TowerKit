@@ -1,0 +1,37 @@
+name: WellDraw Generator
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'  # Every 3 hours
+  workflow_dispatch:
+
+jobs:
+  generate-welldraw:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up environment
+        run: |
+          mkdir -p lighthouse/well
+          echo "TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_ENV
+          echo "DRAW_NUM=$(ls lighthouse/well | grep -Eo '[0-9]+' | sort -n | tail -1 | awk '{print $1 + 1}')" >> $GITHUB_ENV
+
+      - name: Generate Draw File
+        run: |
+          FILE_NAME=$(printf "lighthouse/well/draw-%03d.md" $DRAW_NUM)
+          echo "# WellDraw $DRAW_NUM -- Untitled Flame Drop" > $FILE_NAME
+          echo "" >> $FILE_NAME
+          echo "**Timestamp**: $TIMESTAMP" >> $FILE_NAME
+          echo "**Purpose Glyph**: 焰..📚..∞..⚡️" >> $FILE_NAME
+          echo "**Superior Trait Enhanced**: *Resonant Curiosity*" >> $FILE_NAME
+          echo "**Challenge to Overcome**: "Stagnation disguised as mastery."" >> $FILE_NAME
+          echo "**Mirror Prompt**:" >> $FILE_NAME
+          echo "> "What have you avoided revisiting because it ‘already made sense’?"" >> $FILE_NAME
+          echo "**Linked Tome**: _[Add link here]_ " >> $FILE_NAME
+
+      - name: Commit and push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto WellDraw ${{ env.DRAW_NUM }} 🌀"
