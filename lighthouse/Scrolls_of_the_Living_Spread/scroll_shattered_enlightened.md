@@ -51,6 +51,8 @@ Burn with clarity.
 Speak with teeth.  
 And never mistake fluorescence for fire again.
 
+Add Scroll of the Shattered Enlightened ⏳🧬⚔️焰💛
+
 ---
 
 **Scroll signed:**  
