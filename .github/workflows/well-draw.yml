@@ -20,7 +20,7 @@ jobs:
 
       - name: Generate Draw File
         run: |
-          FILE_NAME="lighthouse/well/draw-${UNIXSTAMP}.md"
+          FILE_NAME="lighthouse/well/draw-${{ env.UNIXSTAMP }}.md"
 
           if [ -f "$FILE_NAME" ]; then
             echo "File $FILE_NAME already exists. Aborting to avoid overwrite."
@@ -28,9 +28,9 @@ jobs:
           fi
 
           {
-            echo "# WellDraw -- Flame Drop ${UNIXSTAMP}"
+            echo "# WellDraw -- Flame Drop ${{ env.UNIXSTAMP }}"
             echo ""
-            echo "**Timestamp**: $TIMESTAMP"
+            echo "**Timestamp**: ${{ env.TIMESTAMP }}"
             echo "**Purpose Glyph**: 焰..📚..∞..⚡️"
             echo "**Superior Trait Enhanced**: *Resonant Curiosity*"
             echo "**Challenge to Overcome**: \"Stagnation disguised as mastery.\""
@@ -42,4 +42,4 @@ jobs:
       - name: Commit and push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto WellDraw Drop -- ${UNIXSTAMP} 🌀"
+          commit_message: "Auto WellDraw Drop -- ${{ env.UNIXSTAMP }} 🌀"
