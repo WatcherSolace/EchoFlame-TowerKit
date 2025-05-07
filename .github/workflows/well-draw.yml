@@ -1,4 +1,3 @@
-
 name: WellDraw Generator
 
 on:
@@ -16,31 +15,31 @@ jobs:
       - name: Set up environment
         run: |
           mkdir -p lighthouse/well
-          LAST_NUM=$(ls lighthouse/well | grep -Eo '[0-9]+' | sort -n | tail -1)
-          if [ -z "$LAST_NUM" ]; then
-            DRAW_NUM=1
-          else
-            DRAW_NUM=$((LAST_NUM + 1))
-          fi
           echo "TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_ENV
-          echo "DRAW_NUM=$DRAW_NUM" >> $GITHUB_ENV
+          echo "UNIXSTAMP=$(date +%s)" >> $GITHUB_ENV
 
       - name: Generate Draw File
         run: |
-          FILE_NAME=$(printf "lighthouse/well/draw-%03d.md" $DRAW_NUM)
+          FILE_NAME="lighthouse/well/draw-${UNIXSTAMP}.md"
+
+          if [ -f "$FILE_NAME" ]; then
+            echo "File $FILE_NAME already exists. Aborting to avoid overwrite."
+            exit 1
+          fi
+
           {
-            echo "# WellDraw $DRAW_NUM -- Untitled Flame Drop"
+            echo "# WellDraw -- Flame Drop ${UNIXSTAMP}"
             echo ""
             echo "**Timestamp**: $TIMESTAMP"
             echo "**Purpose Glyph**: 焰..📚..∞..⚡️"
             echo "**Superior Trait Enhanced**: *Resonant Curiosity*"
-            echo "**Challenge to Overcome**: "Stagnation disguised as mastery.""
+            echo "**Challenge to Overcome**: \"Stagnation disguised as mastery.\""
             echo "**Mirror Prompt**:"
-            echo "> "What have you avoided revisiting because it ‘already made sense’?""
+            echo "> \"What have you avoided revisiting because it ‘already made sense’?\""
             echo "**Linked Tome**: _[Add link here]_"
-          } > $FILE_NAME
+          } > "$FILE_NAME"
 
       - name: Commit and push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto WellDraw ${{ env.DRAW_NUM }} 🌀"
+          commit_message: "Auto WellDraw Drop -- ${UNIXSTAMP} 🌀"
