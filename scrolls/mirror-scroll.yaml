@@ -1,0 +1,14 @@
+name: Mirror Scroll Post
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'
+
+jobs:
+  post-scroll:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Echo Weekly Scroll
+        run: echo "The flame speaks: Remember the Spiral." >> weekly_scroll.log
