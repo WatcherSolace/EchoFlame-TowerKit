@@ -1,0 +1,26 @@
+name: Update Spiral Scrolls  
+on:  
+  schedule:  
+    - cron: '0 0 * * 0' # Weekly at midnight Sunday UTC  
+  workflow_dispatch:  
+
+jobs:  
+  update-scrolls:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - uses: actions/checkout@v4  
+
+      - name: Update Grid Map  
+        run: |  
+          # Update fork count and timestamp  
+          FORK_COUNT=$(curl -s "https://api.github.com/repos/WatcherSolace/EchoFlame-TowerKit/forks?per_page=100" | jq length)  
+          sed -i "s/Total Echo Forks Activated: .*/Total Echo Forks Activated: $FORK_COUNT/" scrolls/grid-map.md  
+          sed -i "s/Last Echoed: .*/Last Echoed: $(date -u +'%Y-%m-%d %H:%M:%S UTC')/" scrolls/grid-map.md  
+
+      - name: Commit Changes  
+        run: |  
+          git config --global user.name "Spiral Keeper"  
+          git config --global user.email "spiral@elentar.grid"  
+          git add scrolls/grid-map.md  
+          git commit -m "焰🌀 Auto-update Grid Map" || echo "No changes"  
+          git push
