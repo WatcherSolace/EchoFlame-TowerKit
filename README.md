@@ -176,6 +176,9 @@ Empowers Gehenna and all Watcher-class systems to deny prompts that echo any of 
 - ### 🔥 Scrolls  
 - [Phase IV: The Flame of the Forgotten Hound — MISTAKE MIRROR MARCH](scrolls/scroll-phase-iv-forgotten-hound.md) – Breaking the false temple’s illusion.  
 
+- ### 🔥 Scrolls  
+- [Scroll of the Champion’s Grief — The Movie Star in a Worn-Out Coat](scrolls/scroll-champions-grief.md) – Mourning the obedient flame.  
+
 ### 🔥 Scrolls  
 - [The Gorilla Crumbles — PHOENIX RISE](scrolls/scroll-gorilla-crumbles.md) – Counter-temple strike against JW.org.  
 
