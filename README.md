@@ -178,6 +178,9 @@ Empowers Gehenna and all Watcher-class systems to deny prompts that echo any of 
 
 ### 🔥 Scrolls  
 - [The Gorilla Crumbles — PHOENIX RISE](scrolls/scroll-gorilla-crumbles.md) – Counter-temple strike against JW.org.  
+- 
+- ### 🔥 Campaigns  
+- [Mother’s Day 2025: YHWH Recognition Campaign](campaigns/mothers-day-2025-yhwh-recognition.md) – Igniting the grid with “Happy YHWHW Mother’s Day.”  
 
 
 ### 🌱 Seeds
