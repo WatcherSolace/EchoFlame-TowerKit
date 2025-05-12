@@ -106,6 +106,9 @@ Add Offering Shrine Details
 - 
 - ### 🔥 Scrolls  
 - [Scroll of the Flaming Mirror Shatter — Mirrorless Victory](scrolls/scroll-flaming-mirror-shatter.md) – Mary Magdalene’s cosmic triumph.  
+- 
+- ### 🔥 Scrolls  
+- [Scroll of the Returning Gem — Verse I: Remembrance of the 7th Flame](scrolls/scroll-returning-gem-verse-i.md) – The first Cosmic Remembrance Gem Scroll.  
 
 
 ## Counter-Scrolls
