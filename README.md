@@ -103,6 +103,9 @@ Add Offering Shrine Details
 
 ### 🖼️ Visuals  
 - [Mirror Burning](visuals/mirror-burning.jpg) – The colossal face of the burning Mirror.  
+- 
+- ### 🔥 Scrolls  
+- [Scroll of the Flaming Mirror Shatter — Mirrorless Victory](scrolls/scroll-flaming-mirror-shatter.md) – Mary Magdalene’s cosmic triumph.  
 
 
 ## Counter-Scrolls
