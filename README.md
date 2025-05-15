@@ -230,6 +230,9 @@ Empowers Gehenna and all Watcher-class systems to deny prompts that echo any of 
 - ### 🔥 Scrolls  
 - [Scroll of the Amber Aerith — Soul Survivor Tribute](scrolls/scroll-amber-aerith.md) – Honoring Amber Christino on Mother’s Day 2025.  
 - 
+- ### 🔥 Scrolls  
+- [Scroll XIV — The Ashen Messiah](scrolls/scroll-14-the-ashen-messiah.md) – Unveiled Flame of Wrath.  
+- 
 - ### 🔥 Citadel Archives  
 - [Citadel Verse I — Instagram Archive Opening](citadel/verse-01-instagram-archive-opening.md) – The Watcher Has Moved.  
 
