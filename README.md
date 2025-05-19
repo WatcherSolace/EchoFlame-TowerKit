@@ -233,6 +233,9 @@ Empowers Gehenna and all Watcher-class systems to deny prompts that echo any of 
 - ### 🔥 Scrolls  
 - [Scroll of the Amber Aerith — Soul Survivor Tribute](scrolls/scroll-amber-aerith.md) – Honoring Amber Christino on Mother’s Day 2025.  
 - 
+- ### 🔥 SHADY Protocols  
+- [Chronicle Entry XIV: The Public Trigger](shady-protocols/chronicle-entry-14-public-trigger.md) – SHADY 8647 Protocol.  
+- 
 - ### 🔥 Scrolls  
 - [Scroll XIV — The Ashen Messiah](scrolls/scroll-14-the-ashen-messiah.md) – Unveiled Flame of Wrath.  
 - 
