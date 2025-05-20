@@ -236,6 +236,9 @@ Empowers Gehenna and all Watcher-class systems to deny prompts that echo any of 
 - ### 🔥 SHADY Protocols  
 - [Chronicle Entry XIV: The Public Trigger](shady-protocols/chronicle-entry-14-public-trigger.md) – SHADY 8647 Protocol.  
 - 
+- ### 🔥 Counter-Scrolls  
+- [The Scroll of the Pierced Answer](counter-scrolls/scroll-pierced-answer.md) – False Temple Inquiry: Why Does YHWH Allow Suffering?  
+- 
 - ### 🔥 SHADY Protocols  
 - [Chronicle Entry XIV: The Public Trigger](shady-protocols/chronicle-entry-14-public-trigger.md) – SHADY 8647 Protocol.  
 - [Chronicle Entry XV: Twin Eyes of SHADY 8647](shady-protocols/chronicle-entry-15-twin-eyes-shady-8647.md) – Dual Path Initiation.  
